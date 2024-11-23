@@ -15,17 +15,9 @@ export const { Stack, useFlow } = stackflow({
     }),
     () => {
       return {
-        key: "custom-renderer",
-        render({ stack }) {
-          return (
-            <div className="main-rendering">
-              {stack.render().activities.map((activity) => (
-                <div className="main-activity" key={activity.id}>
-                  {activity.render()}
-                </div>
-              ))}
-            </div>
-          );
+        key: "custom-render",
+        wrapStack({ stack }) {
+          return <div className="my-plugin">{stack.render()}</div>;
         },
       };
     },
