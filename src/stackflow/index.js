@@ -16,8 +16,8 @@ export const { Stack, useFlow } = stackflow({
     () => {
       return {
         key: "custom-render",
-        wrapStack({ stack }) {
-          return <div className="my-plugin">{stack.render()}</div>;
+        onInit() {
+          console.log("Initialized!");
         },
       };
     },
