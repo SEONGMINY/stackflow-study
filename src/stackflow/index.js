@@ -3,6 +3,7 @@ import { stackflow } from "@stackflow/react";
 import { basicRendererPlugin } from "@stackflow/plugin-renderer-basic";
 import { basicUIPlugin } from "@stackflow/plugin-basic-ui";
 import MainActivity from "../activity/MainActivity";
+import ArticleActivity from "../activity/ArticleActivity";
 
 export const { Stack, useFlow } = stackflow({
   transitionDuration: 300,
@@ -15,6 +16,7 @@ export const { Stack, useFlow } = stackflow({
   ],
   activities: {
     MainActivity,
+    ArticleActivity,
   },
   initialActivity: () => "MainActivity",
 });
