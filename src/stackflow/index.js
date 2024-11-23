@@ -2,6 +2,7 @@ import "@stackflow/plugin-basic-ui/index.css";
 import { stackflow } from "@stackflow/react";
 import { basicRendererPlugin } from "@stackflow/plugin-renderer-basic";
 import { basicUIPlugin } from "@stackflow/plugin-basic-ui";
+import MainActivity from "../activity/MainActivity";
 
 export const { Stack, useFlow } = stackflow({
   transitionDuration: 300,
@@ -12,4 +13,8 @@ export const { Stack, useFlow } = stackflow({
       theme: "cupertino",
     }),
   ],
+  activities: {
+    MainActivity,
+  },
+  initialActivity: () => "MainActivity",
 });
