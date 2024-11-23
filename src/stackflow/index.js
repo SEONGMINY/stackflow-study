@@ -13,6 +13,22 @@ export const { Stack, useFlow } = stackflow({
     basicUIPlugin({
       theme: "cupertino",
     }),
+    () => {
+      return {
+        key: "custom-renderer",
+        render({ stack }) {
+          return (
+            <div className="main-rendering">
+              {stack.render().activities.map((activity) => (
+                <div className="main-activity" key={activity.id}>
+                  {activity.render()}
+                </div>
+              ))}
+            </div>
+          );
+        },
+      };
+    },
   ],
   activities: {
     MainActivity,
