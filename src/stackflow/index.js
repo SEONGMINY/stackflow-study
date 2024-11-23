@@ -21,6 +21,18 @@ export const { Stack, useFlow } = stackflow({
         },
       };
     },
+    () => {
+      return {
+        key: "custom-plugin",
+        onPushed(actions, effect) {
+          // you can utilize
+          // actions.getStack()
+          // actions.dispatchEvent(...)
+          console.log("Pushed!");
+          console.log("Effect:", effect);
+        },
+      };
+    },
   ],
   activities: {
     MainActivity,
